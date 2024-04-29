@@ -137,10 +137,8 @@ def yelp_location_search(location: str, term=None) -> pandas.DataFrame:
 
     if page_dfs:
         search_results = pandas.concat(page_dfs, ignore_index=True)
-        print("pandas_true")
     else:
         search_results = pandas.DataFrame()
-        print("pandas_else")
 
     # Coerce JSON-like pandas objects into JSON-formatted strings
     search_results[JSON_COLUMNS] = search_results[JSON_COLUMNS].map(json.dumps).astype('string')
