@@ -169,7 +169,7 @@ if __name__ == '__main__':
     terms.append(None)
     print("args_all")
 
-  cities = ["St. Louis, MO; Saint Louis, MO"]
+  cities = ["St. Louis, MO", "Saint Louis, MO"]
 
   # Establish connection to SQLite database
   dummy_con = sqlite3.connect('nob.db')
