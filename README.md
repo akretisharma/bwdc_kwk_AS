@@ -1,4 +1,4 @@
-Topic: Black businesses in St. Louis
+*Topic: Black businesses in St. Louis*
 
 Questions to answer:
 - How many Black businesses are in each city? 
