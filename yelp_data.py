@@ -18,7 +18,6 @@ HEADERS = {
 }
 JSON_COLUMNS = ["categories", "coordinates", "transactions", "location"]
 
-
 def __init__(
     self,
     connection,
