@@ -11,7 +11,7 @@ import sqlite3
 DESTINATION_SCHEMA = "yelp"
 DESTINATION_TABLE = "business_search_results"
 YELP_URL = "https://api.yelp.com/v3/businesses/search?"
-os.environ['YELP_API_KEY']=''
+os.environ['YELP_API_KEY']=' '
 HEADERS = {
   "accept": "application/json",
   "Authorization": f"Bearer {os.getenv('YELP_API_KEY')}"
