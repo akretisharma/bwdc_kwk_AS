@@ -1,4 +1,6 @@
-*Topic: Black businesses in St. Louis*
+# KWK BWDC Challenge Code
+
+#### Topic: Black businesses in St. Louis
 
 Questions to answer:
 - How many Black businesses are in each city? 
