@@ -148,4 +148,4 @@ def yelp_location_search(location: str, term: str) -> pandas.DataFrame:
 
 yelp_location_search("St. Louis", "Black owned")
 
-print("Data fetching complete")
+print("Data fetching complete.")
