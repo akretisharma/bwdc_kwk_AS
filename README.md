@@ -3,6 +3,7 @@
 #### Topic: Black businesses in St. Louis
 
 yelp_data.py -> more concise version of code
+
 yelp_data_2.py -> longer version of code
 
 
