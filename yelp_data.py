@@ -6,7 +6,7 @@ import requests
 import urllib
 import zipcodes
 
-
+#Assign variables that will be used throughout code
 DESTINATION_SCHEMA = "yelp"
 DESTINATION_TABLE = "business_search_results"
 YELP_URL = "https://api.yelp.com/v3/businesses/search?"
@@ -17,9 +17,12 @@ HEADERS = {
 }
 JSON_COLUMNS = ["categories", "coordinates", "transactions", "location"]
 
+print("Data fetching beginning...")
+
+print("Building Yelp search URL")
 def yelp_search_url(location: str, term: str) -> str:
   """
-  Build a Yelp search URL from `location` and optional `term`
+  Build a Yelp search URL from `location` and `term`
   """
   term_param = f"&term={urllib.parse.quote_plus(term)}" if term else ""
   search_url = f"{YELP_URL}{term_param}&location={urllib.parse.quote_plus(location)}&sort=distance"
@@ -30,7 +33,7 @@ yelp_search_url("St. Louis", "Black owned")
 
 def yelp_expected_result_count(location: str, term: str) -> int:
   """
-  Get the total number of results for a Yelp search on `location` and optional `term`
+  Get the total number of results for a Yelp search on `location` and `term`
   """
   search_url = yelp_search_url(location=location, term=term)
   response = requests.get(url=search_url, headers=HEADERS)
@@ -48,7 +51,7 @@ yelp_expected_result_count("St. Louis", "Black owned")
 
 def yelp_city_locations(city: str, term: str) -> tuple[list, int]:
   """
-  Get the total number of results for a Yelp search on `city` and optional `term`;
+  Get the total number of results for a Yelp search on `city` and `term`;
   if this is greater than 1000, split the single citywide search into multiple
   searches on zipcode-specific locations
   """
@@ -110,7 +113,7 @@ def yelp_location_search(location: str, term: str) -> pandas.DataFrame:
                 results_df = pandas.DataFrame.from_records(page_results)
                 results_df["_page_url"] = page_url
                 page_dfs.append(results_df)
-                results_df.to_csv('bwdc_data1.csv')  # Save dataframe as data.csv in the current directory
+                results_df.to_csv('data.csv')  # Save dataframe as data.csv
 
                 limit = MAX_LIMIT if running_count + MAX_LIMIT <= min(total_count, MAX_RESULTS) else min(total_count, MAX_RESULTS) - running_count
 
@@ -145,3 +148,4 @@ def yelp_location_search(location: str, term: str) -> pandas.DataFrame:
 
 yelp_location_search("St. Louis", "Black owned")
 
+print("Data fetching complete")
