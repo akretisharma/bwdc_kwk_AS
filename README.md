@@ -2,14 +2,7 @@
 
 #### Topic: Black businesses in St. Louis
 
-yelp_data.py -> more concise version of code
+1. Code builds Yelp search URL and uses Yelp API Key to fetch data.
+2. By assigning a value to the 'term' in every function, the code can narrow down search results to what is required.
+3. Code gets the expected result count and loads data into a pandas data frame which can be exported as a CSV file.
 
-yelp_data_2.py -> longer version of code
-
-
-Questions to answer:
-- How many Black businesses are in each city? 
-  - Where in the city are Black businesses located? 
-  - Are Black businesses underrepresented in each of the cities?
-- What types of industries are represented? 
-- What networks and resources are available for Black entrepreneurs?
