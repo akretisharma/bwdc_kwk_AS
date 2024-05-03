@@ -7,3 +7,4 @@
 3. Code gets the expected result count and loads data into a pandas data frame which can be exported as a CSV file.
 4. This CSV file can then be used to make data visualizations
 
+The code pulls data from the Yelp API and cleans it to find specifically black-owned businesses by inserting "black-owned" as a term. It also aggregates the data into a pandas data frame which is converted into a CSV file. 
